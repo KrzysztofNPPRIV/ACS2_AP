@@ -8,15 +8,17 @@ namespace Appl
     : QObject{parent},
       argument
       {
-        { Application::ArgumentType::BmpPathFolder,   new Argument{ .index = static_cast<qint32>(ArgumentType::BmpPathFolder) + 1, .text = "" } }
+        { Application::ArgumentType::BmpPathFolder,   new Argument{ .index = static_cast<qint32>(ArgumentType::BmpPathFolder) + 1, .text = "" } },
+        { Application::ArgumentType::LogPathFolder,   new Argument{ .index = static_cast<qint32>(ArgumentType::LogPathFolder) + 1, .text = "" } }
       }
   {
     appl = nullptr;
+    console = nullptr;
   }
 
   Application::~Application() noexcept
   {
-
+    delete console;
   }
 
   int Application::start(int argc, char *argv[]) noexcept
@@ -33,8 +35,13 @@ namespace Appl
           iter.value()->text = argv[iter.value()->index];
         }
 
-        // console->init(argument[Application::ArgumentType::LogFilePath]->text, argument[Application::ArgumentType::LogFileStatus]->text);
-        // console->print("Start");
+        console = new Console{nullptr, argument[Application::ArgumentType::LogPathFolder]->text};
+        connect(this,
+                SIGNAL(print(QString)),
+                console,
+                SLOT(print(QString)));
+
+        emit print("Application start");
 
         MainWindow w;
         w.show();
@@ -43,13 +50,8 @@ namespace Appl
       }
       else
       {
-        //console->print("Invalid number of arguments.");
         appl.exit(1);
       }
-    }
-    else
-    {
-      //console->print("Application has been already started!!!");
     }
 
     return 1;

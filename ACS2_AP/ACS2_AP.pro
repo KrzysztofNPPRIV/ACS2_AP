@@ -10,11 +10,13 @@ CONFIG += c++17
 
 SOURCES += \
     Appl/Application/Application.cpp \
+    Appl/Application/Console.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
     Appl/Application/Application.h \
+    Appl/Application/Console.h \
     mainwindow.h
 
 FORMS += \
