@@ -53,7 +53,7 @@ namespace Appl
 
     if (file != nullptr)
     {
-      QString log = currentDateTime.toString("yyyy.MM.dd hh:mm:ss") + " " + text + "\r\n";
+      QString log = currentDateTime.toString("yyyy.MM.dd hh:mm:ss") + " " + text + "\n";
       if (file->open(QIODevice::WriteOnly | QIODevice::Text | QIODevice::Append))
       {
         file->write(log.toUtf8());

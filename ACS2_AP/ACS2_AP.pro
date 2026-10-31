@@ -11,12 +11,14 @@ CONFIG += c++17
 SOURCES += \
     Appl/Application/Application.cpp \
     Appl/Application/Console.cpp \
+    Appl/HMI/HMIManager/HMIManager.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
     Appl/Application/Application.h \
     Appl/Application/Console.h \
+    Appl/HMI/HMIManager/HMIManager.h \
     mainwindow.h
 
 FORMS += \

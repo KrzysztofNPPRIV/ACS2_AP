@@ -14,11 +14,13 @@ namespace Appl
   {
     appl = nullptr;
     console = nullptr;
+    hmiManager = nullptr;
   }
 
   Application::~Application() noexcept
   {
     delete console;
+    delete hmiManager;
   }
 
   int Application::start(int argc, char *argv[]) noexcept
@@ -36,12 +38,21 @@ namespace Appl
         }
 
         console = new Console{nullptr, argument[Application::ArgumentType::LogPathFolder]->text};
+        hmiManager = new HMI::HMIManager{nullptr};
+
         connect(this,
                 SIGNAL(print(QString)),
                 console,
                 SLOT(print(QString)));
 
+        connect(hmiManager,
+                SIGNAL(print(QString)),
+                console,
+                SLOT(print(QString)));
+
         emit print("Application start");
+
+        hmiManager->start();
 
         MainWindow w;
         w.show();

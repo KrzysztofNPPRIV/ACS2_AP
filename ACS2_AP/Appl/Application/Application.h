@@ -2,6 +2,7 @@
 #define APPLICATION_H
 
 #include "Appl/Application/Console.h"
+#include "Appl/HMI/HMIManager/HMIManager.h"
 
 #include <QObject>
 #include <QApplication>
@@ -37,6 +38,7 @@ namespace Appl
       QApplication *appl;
       QMap<ArgumentType, Argument *> argument;
       Console *console;
+      HMI::HMIManager *hmiManager;
 
     signals:
       void print(QString text);
