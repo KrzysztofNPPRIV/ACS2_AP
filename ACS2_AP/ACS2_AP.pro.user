@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 16.0.2, 2026-10-31T23:45:52. -->
+<!-- Written by QtCreator 16.0.2, 2026-11-01T00:12:50. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -249,7 +249,7 @@
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:</value>
     <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">E:/Krzysztof/OneDrive/Projekty/Software/ACS2/ACS2_AP/ACS2_AP/ACS2_AP.pro</value>
     <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">true</value>
-    <value type="QString" key="RunConfiguration.Arguments">c:/</value>
+    <value type="QString" key="RunConfiguration.Arguments">c:/ e:/Krzysztof/OneDrive/Projekty/Software/ACS2/ACS2_AP/Log/</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>

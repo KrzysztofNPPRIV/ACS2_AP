@@ -1,6 +1,8 @@
 #ifndef APPLICATION_H
 #define APPLICATION_H
 
+#include "Appl/Application/Console.h"
+
 #include <QObject>
 #include <QApplication>
 #include <QString>
@@ -22,7 +24,7 @@ namespace Appl
       int start(int argc, char *argv[]) noexcept;
 
     private:
-      enum class ArgumentType { BmpPathFolder, End };
+      enum class ArgumentType { BmpPathFolder, LogPathFolder, End };
 
       struct Argument
       {
@@ -34,6 +36,10 @@ namespace Appl
 
       QApplication *appl;
       QMap<ArgumentType, Argument *> argument;
+      Console *console;
+
+    signals:
+      void print(QString text);
   };
 }
 #endif // APPLICATION_H
